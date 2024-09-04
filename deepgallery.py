@@ -161,6 +161,7 @@ class DeepGallery(Gramplet):
         for event_ref in gobj.get_event_ref_list():
             event_handle = event_ref.get_reference_handle()
             event = self.dbstate.db.get_event_from_handle(event_handle)
+            self.process_media(event)
             self.process_citations(event)
 
 
